@@ -10,6 +10,7 @@ fi
 ALL_MODULES_DIR=$1
 SRC_MODULE_DOCS_DIR=$2
 MODULE_DOCS_DIR=$3
+MODULES_TO_CLONE=stackrModule
 echo "Using ${ALL_MODULES_DIR} as the source of all our module documentation"
 echo "Using ${SRC_MODULE_DOCS_DIR} as the source of the master documentation"
 echo "Using ${MODULE_DOCS_DIR} as the target for all our compiled documentation"
@@ -23,7 +24,9 @@ cp -R ${SRC_MODULE_DOCS_DIR}/docs ${MODULE_DOCS_DIR}/
 # clone all the modules that are part of the modules documentation dir
 # this could be automated to just loop through all the repos in the project (AZDO) and clone those
 cd ${ALL_MODULES_DIR}
-# imagine a loop with a git clone cmd here
+for module in ${MODULES_TO_CLONE}; do
+  git clone git@github.com:tunix78/${module}.git
+done
 cd -
 
 # we will assume that all terraform modules have the same structure (moduleName/docs/)
