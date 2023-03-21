@@ -41,6 +41,9 @@ jobs:
         uses: ammaraskar/sphinx-action@master
         with:
           docs-folder: "${{ github.workspace }}/tgt_module_docs_dir/docs"
+      - name: List files in the moduleDocs repository
+        run: |
+          ls -lRrt moduleDocs
       - name: Print job status
         run: |
           echo "This job's status is ${{ job.status }}."
