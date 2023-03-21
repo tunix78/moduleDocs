@@ -25,14 +25,14 @@ jobs:
         with:
           repository: tunix78/stackrModule
           token: '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'
-          path: stackr-module
+          path: stackrModule
       - name: List files in the repository
         run: |
-          ls -lrt ${{ github.workspace }}
+          ls -lRrt ${{ github.workspace }}
       - name: Do the Sphinx Build
         uses: ammaraskar/sphinx-action@master
         with:
-          docs-folder: "docs/"
+          docs-folder: "moduleDocs/docs/"
       - name: Print job status
         run: |
           echo "This job's status is ${{ job.status }}."
