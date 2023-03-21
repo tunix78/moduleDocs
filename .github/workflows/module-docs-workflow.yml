@@ -26,9 +26,6 @@ jobs:
       #    repository: tunix78/stackrModule
       #    token: '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'
       #    path: stackrModule
-      - name: List files in the repository
-        run: |
-          ls -lRrt ${{ github.workspace }}
       - name: Merge module directories into master docs
         run: |
           cd moduleDocs/scripts
@@ -37,6 +34,9 @@ jobs:
       #  run: |
       #    cd moduleDocs/scripts
       #    ./build_module_docs.sh ${{ github.workspaces }}/tgt_module_docs_dir
+      - name: List files in the repository
+        run: |
+          ls -lRrt ${{ github.workspace }}
       - name: Do the Sphinx Build
         uses: ammaraskar/sphinx-action@master
         with:

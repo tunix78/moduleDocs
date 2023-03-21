@@ -11,14 +11,14 @@ SRC_MODULES_DIR=$1
 MSTR_MODULE_DOCS_DIR=$2
 TGT_MODULE_DOCS_DIR=$3
 MODULES_TO_CLONE=stackrModule
-echo "Using ${ALL_MODULES_DIR} as the source of all our module documentation"
-echo "Using ${SRC_MODULE_DOCS_DIR} as the source of the master documentation"
-echo "Using ${MODULE_DOCS_DIR} as the target for all our compiled documentation"
+echo "Using ${SRC_MODULES_DIR} as the source of all our module documentation"
+echo "Using ${MSTR_MODULE_DOCS_DIR} as the source of the master documentation"
+echo "Using ${TGT_MODULE_DOCS_DIR} as the target for all our compiled documentation"
 
 # Create the source modules dir in case it doesn't exist
 echo
-echo "Creating the source module dir: " ${SRC_MODULE_DOCS_DIR}
-mkdir -p ${SRC_MODULE_DOCS_DIR}
+echo "Creating the source module dir: " ${SRC_MODULES_DIR}
+mkdir -p ${SRC_MODULES_DIR}
 
 # Assumption is that the master documentation has a standard sphinx folder structure
 echo
