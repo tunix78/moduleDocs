@@ -29,7 +29,7 @@ jobs:
       - name: Merge module directories into master docs
         run: |
           cd moduleDocs/scripts
-          ./pull_docs_folders.sh ${{ github.workspaces }}/src_modules_dir ${{ github.workspaces }}/mstr_module_docs_dir ${{ github.workspaces}}/tgt_module_docs_dir
+          ./pull_docs_folders.sh ${{ github.workspaces }} src_modules_dir mstr_module_docs_dir tgt_module_docs_dir
       #- name: Build the sphinx documentation
       #  run: |
       #    cd moduleDocs/scripts
