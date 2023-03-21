@@ -25,6 +25,8 @@ cp -R ${SRC_MODULE_DOCS_DIR}/docs ${MODULE_DOCS_DIR}/
 # this could be automated to just loop through all the repos in the project (AZDO) and clone those
 cd ${ALL_MODULES_DIR}
 for module in ${MODULES_TO_CLONE}; do
+  rm -rf ${ALL_MODULES_DIR}/${module}
+  echo "Cloning module " ${module}
   git clone git@github.com:tunix78/${module}.git
 done
 cd -
@@ -42,17 +44,17 @@ find $ALL_MODULES_DIR -maxdepth 1 -mindepth 1 -type d | while read dir; do
   echo "Directory to get RST files from: ${THE_DIR}"
   mkdir -p ${MODULE_DOCS_DIR}/docs/source/${THE_DIR}
 
-  echo
-  echo "  !!! Copy static content"
-  cp -R ${dir}/docs/source/_static/* ${MODULE_DOCS_DIR}/docs/source/_static/
+  #echo
+  #echo "  !!! Copy static content"
+  #cp -R ${dir}/docs/source/_static/* ${MODULE_DOCS_DIR}/docs/source/_static/
 
-  echo
-  echo "  !!! Copy image content"
-  echo "TODO - Needs to be implemented still"
+  #echo
+  #echo "  !!! Copy image content"
+  #echo "TODO - Needs to be implemented still"
 
-  echo
-  echo "  !!! Copy template content"
-  cp -R ${dir}/docs/source/_templates/* ${MODULE_DOCS_DIR}/docs/source/_templates/
+  #echo
+  #echo "  !!! Copy template content"
+  #cp -R ${dir}/docs/source/_templates/* ${MODULE_DOCS_DIR}/docs/source/_templates/
 
   echo
   echo "  !!! Copy actual restructured text files"
