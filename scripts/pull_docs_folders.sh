@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # we need to get 3 input parameters, the directory that we can find all the module docs in, the source dir for the master docs and the target path to put all the docs into
-if [[ $# != 3 ]]; then
+if [[ $# != 4 ]]; then
     echo "Usage: $0 <base_dir> <src_modules_dir> <mstr_module_docs_dir> <tgt_module_docs_dir>"
     echo "Example: $0 /tmp src_modules mstr_moduleDocs tgt_module_docs"
     exit 1
