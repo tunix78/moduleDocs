@@ -29,18 +29,18 @@ jobs:
       - name: List files in the repository
         run: |
           ls -lRrt ${{ github.workspace }}
-      #- name: Do the Sphinx Build
-      #  uses: ammaraskar/sphinx-action@master
-      #  with:
-      #    docs-folder: "moduleDocs/docs/"
       - name: Merge module directories into master docs
         run: |
           cd moduleDocs/scripts
           ./pull_docs_folders.sh ${{ github.workspaces }}/src_modules_dir ${{ github.workspaces }}/mstr_module_docs_dir ${{ github.workspaces}}/tgt_module_docs_dir
-      - name: Build the sphinx documentation
-        run: |
-          cd moduleDocs/scripts
-          ./build_module_docs.sh ${{ github.workspaces }}/tgt_module_docs_dir
+      #- name: Build the sphinx documentation
+      #  run: |
+      #    cd moduleDocs/scripts
+      #    ./build_module_docs.sh ${{ github.workspaces }}/tgt_module_docs_dir
+      - name: Do the Sphinx Build
+        uses: ammaraskar/sphinx-action@master
+        with:
+          docs-folder: "${{ github.workspaces }}/tgt_module_docs_dir/docs"
       - name: Print job status
         run: |
           echo "This job's status is ${{ job.status }}."
