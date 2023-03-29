@@ -44,6 +44,11 @@ jobs:
       - name: List files in the moduleDocs repository
         run: |
           ls -lRrt moduleDocs
+      - name: Upload sphinx overall docs to static website in Azure
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
+              az storage blob upload-batch --overwrite --account-name svensappstorage --auth-mode key -d '$web/docs/moduleDocs' -s ${{ github.workspace}}/tgt_module_docs_dir/build/html
       - name: Print job status
         run: |
           echo "This job's status is ${{ job.status }}."
