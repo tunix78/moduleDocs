@@ -12,7 +12,6 @@ Welcome to CloudDoc's documentation!
    :caption: Contents:
 
    stackrModule/index
-   stackrTest/index
 
 This is the root document
 
