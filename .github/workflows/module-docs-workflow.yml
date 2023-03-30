@@ -56,7 +56,7 @@ jobs:
         uses: azure/CLI@v1
         with:
           inlineScript: |
-              az storage blob upload-batch --overwrite --account-name svensappstorage --auth-mode key -d '$web/docs/moduleDocs' -s ${{ github.workspace}}/tgt_module_docs_dir/build/html
+              az storage blob upload-batch --overwrite --account-name svensappstorage --auth-mode key -d '$web/docs/moduleDocs' -s tgt_module_docs_dir/build/html
       
       - name: Print job status
         run: |
