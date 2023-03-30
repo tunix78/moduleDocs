@@ -50,7 +50,7 @@ jobs:
 
       - name: List files in the moduleDocs repository
         run: |
-          ls -lRrt moduleDocs
+          ls -lRrt tgt_module_docs_dir/
 
       - name: Upload sphinx overall docs to static website in Azure
         uses: azure/CLI@v1
