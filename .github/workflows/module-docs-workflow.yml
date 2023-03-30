@@ -46,7 +46,7 @@ jobs:
       - name: Do the Sphinx Build
         uses: ammaraskar/sphinx-action@master
         with:
-          docs-folder: "moduleDocs/tgt_module_docs_dir/docs"
+          docs-folder: "tgt_module_docs_dir/docs"
 
       - name: List files in the moduleDocs repository
         run: |
